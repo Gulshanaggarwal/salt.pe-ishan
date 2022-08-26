@@ -28,20 +28,9 @@ app.listen(PORT, () => {
 
 app.use("/api/v1", router);
 
-app.use("/api/v1", (req, res) => {
-  res.status(404).json({ message: "please, specify a valid endpoint." });
-});
-
-app.use("/api", (req, res) => {
-  res.status(404).json({ message: "please, specify an API version." });
-});
 
 app.use((req, res) => {
   res.status(404).json({
-    name: "Salt assignment RESTful API",
-    version: "1.0.0",
-    status: "200: OK",
-    health: "RUNNING",
-    mode: "assignment",
+    message: 'Error Not Found'
   });
 });
